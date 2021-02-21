@@ -14,8 +14,8 @@ script:
 
 after_success:
   - docker build -t shyvz/fibonacci-client ./client
-  - docker build -t shyvz/fibonnaci-server ./server
-  - docker build -t shyvz/fibonnaci-nginx ./nginx
+  - docker build -t shyvz/fibonacci-server ./server
+  - docker build -t shyvz/fibonacci-nginx ./nginx
   - docker build -t shyvz/fibonacci-worker ./worker
 
   # Log in to the docker CLi
