@@ -28,8 +28,14 @@ const pgClient = new Pool({
 // Create a table if not exists
 pgClient.on('connect', () => {
     pgClient
-      .query('CREATE TABLE IF NOT EXISTS values (number INT)')
-      .catch((err) => console.log(err));
+        .query('CREATE TABLE IF NOT EXISTS values (number INT)')
+        .catch((err) => {
+            if (!err) {
+                console.log("The query was successful!");
+            } else {
+                console.log(err);
+            }
+        });
 });
 
 
