@@ -26,3 +26,15 @@ after_success:
   - docker push shyvz/fibonacci-server
   - docker push shyvz/fibonacci-nginx
   - docker push shyvz/fibonacci-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "Fibonacci"
+  env: "Fibonacci-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-077012474514"
+  bucket_path: "docker-multi"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
