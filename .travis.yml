@@ -10,7 +10,7 @@ before_install:
 # Add the list of scripts that respectively run the test on the builds in the before-install section
 script:
   # here '-- --coverage' ensures that the tests exit the watch mode upon completion
-  - docker run -e CI=true USERNAME/react-test npm test -- --coverage
+  - docker run -e CI=true shyvz/react-test npm test -- --coverage
 
 after_success:
   - docker build -t shyvz/fibonacci-client ./client
