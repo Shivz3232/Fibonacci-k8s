@@ -62,6 +62,7 @@ app.get('/ping', (req, res) => {
 
 // Retrieve all the idex ever queried
 app.get('/values/all', async (req, res) => {
+    // await pgClient.query('CREATE TABLE IF NOT EXISTS values (number INT)');
     const values = await pgClient.query('SELECT * FROM values');
     res.send(values.rows);
 });

@@ -3,3 +3,5 @@ NOTE: VERY VERY IMPORTANT!!!: pgClient.on('connect') will only be triggered when
                               To fix this simply redeploy the app. Now, whenever the server tries to access the DB now, the 'values' table would 
                               already be present (which was created just before crashing in the previous deployment) and hence letting 
                               the query successfully through!
+                              Or, uncomment line in get /values/all and run once, this should create the database and give an error: Type
+                              'values' already exists. Now restart or redeploy the app.
