@@ -1,0 +1,5 @@
+NOTE: VERY VERY IMPORTANT!!!: pgClient.on('connect') will only be triggered when trying to access the db. But all the accesses to the DB 
+                              are querying to the values table which initially doesn't exist hence crashing the server in that query.
+                              To fix this simply redeploy the app. Now, whenever the server tries to access the DB now, the 'values' table would 
+                              already be present (which was created just before crashing in the previous deployment) and hence letting 
+                              the query successfully through!
